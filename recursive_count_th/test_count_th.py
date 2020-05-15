@@ -23,7 +23,6 @@ class Test(unittest.TestCase):
         count = count_th(self.word)
         self.assertEqual(3, count)
 
-    # ! Error
     def test_count_backwards(self):
         self.word = "thhtthht"
         count = count_th(self.word)
