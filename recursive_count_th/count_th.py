@@ -27,14 +27,14 @@ def count_th(word):
         if arr[0] == "t" and arr[1] == "h":
 
             # Helper
-            helper(arr[0], arr[1], "Match", .5)
+            # helper(arr[0], arr[1], "Match", .5)
 
             # Return 1 + a re-run of this function that takes off the first letter of the arr. This will re-run until a break case, and return this final value.
             return 1 + count_th("".join(arr[1:]))
         else:
 
             # Helper
-            helper(arr[0], arr[1], "Not", .5)
+            # helper(arr[0], arr[1], "Not", .5)
 
             # Return 0 + a re-run of this function that takes off the first letter of the arr. This will re-run until a break case, and return this final value.
             return 0 + count_th("".join(arr[1:]))
