@@ -15,20 +15,20 @@ a)  a = 0
 
 ```python
 b)  sum = 0
-    for i in range(n):
+    for i in range(n): # O(n^c)
       j = 1
-      while j < n:
-        j *= 2
+      while j < n: # O(n)
+        j *= 2 # O(n^c) Multiplies the J value each time, increasing the runtime of the outer loop.
         sum += 1
 ```
 
 
 ```python
 c)  def bunnyEars(bunnies):
-      if bunnies == 0:
+      if bunnies == 0: # O(1)
         return 0
 
-      return 2 + bunnyEars(bunnies-1)
+      return 2 + bunnyEars(bunnies-1) # O(n)
 ```
 
 
