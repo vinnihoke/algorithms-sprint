@@ -15,10 +15,10 @@ a)  a = 0
 
 ```python
 b)  sum = 0
-    for i in range(n): # O(n^c)
+    for i in range(n): # O(n^c) # O(n)
       j = 1
-      while j < n: # O(n)
-        j *= 2 # O(n^c) Multiplies the J value each time, increasing the runtime of the outer loop.
+      while j < n: # O(log n)
+        j *= 2 # O(n^c) Skipping the J value each time, increasing the runtime of the outer loop.
         sum += 1
 ```
 

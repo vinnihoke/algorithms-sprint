@@ -46,16 +46,49 @@ From a scientific standpoint, not a logical standpoint, let's create a program t
 def result_recorder():
     return input("Did the egg break? T/F: ")
 
+# Binary Search would be the best way to minimize broken eggs. Must be Log N. Recursive binary search.
 # n = number of floors in building.
 def egg_drop(n): 
     # We're going to drop the egg from the 0th floor, and move up the building.
-    for floor in range(n): # O(n)
+    for floor in range(n): # O(n) or O(1)
         # Record the result with the helper function.
         result = result_recorder()
 
         # If the value is "T", the egg broke. Return floor because that is the max floor we can drop an egg from.
-        if result == "T":
+        if result == "T": # O(1)
             print(f"Your egg broke at floor {floor}.")
             return floor
+```
+
+```python
+
+# Binary Search Style
+def egg_drop(n):
+    # The lowest floor would be 0
+    low = 0
+    # The highest floor would be n
+    high = n
+
+    #  If low is less than or equat to high
+    while low <= high:
+        #  Split the floors in half.
+        mid = (low + high) // 2
+
+        # The guess would be the middle.
+        guess = mid
+
+        # If the middle is the lowest
+        if guess == low:
+            return mid
+        # If the guess is greater than Low
+        if guess > low:
+            high = mid - 1
+        # If the low is less
+        else:
+            low = mid + 1
+    return low
+
+
+print(egg_drop(5))
 ```
 
